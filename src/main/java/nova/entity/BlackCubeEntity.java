@@ -1,11 +1,13 @@
 package nova.entity;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.control.MoveControl;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -40,7 +42,7 @@ public class BlackCubeEntity extends MobEntity implements GeoEntity {
 
         // 持续关闭重力，确保实体能够悬浮
         this.setNoGravity(true);
-
+        this.setVelocity(Vec3d.ZERO);
     }
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
@@ -58,5 +60,14 @@ public class BlackCubeEntity extends MobEntity implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.cache;
+    }
+    @Override
+    public void takeKnockback(double strength, double x, double z) {
+        // 忽略所有击退
+    }
+
+    @Override
+    public void pushAwayFrom(Entity entity) {
+        // 不被其他实体推挤
     }
 }
