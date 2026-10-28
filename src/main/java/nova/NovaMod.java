@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import nova.block.ModBlocks;
 import nova.entity.ModEntities;
+import nova.item.NovaModItemGroups;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,6 +24,7 @@ public class NovaMod implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModEntities.registerEntities();
 		ModEntities.registerAttributes();
+		NovaModItemGroups.initialize();
 		LOGGER.info("Hello Fabric world!");
 	}
 }
