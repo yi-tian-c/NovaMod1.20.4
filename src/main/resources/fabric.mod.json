@@ -1,31 +1,40 @@
 {
-  "schemaVersion": 1,
-  "id": "novamod",
-  "version": "${version}",
-  "name": "NovaMod",
-  "description": "NovaMod content and rendering experiments.",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "org.novamod.NovaMod"
-    ],
-    "client": [
-      "org.novamod.client.NovaModClient"
-    ],
-    "fabric-datagen": [
-      "org.novamod.datagen.NovaModDataGenerator"
-    ]
-  },
-  "mixins": [
-    "novamod.mixins.json"
-  ],
-  "depends": {
-    "fabricloader": ">=0.15.0",
-    "minecraft": "1.20.4",
-    "java": ">=17",
-    "fabric-api": "*"
-  },
-  "suggests": {
-    "iris": "*"
-  }
+	"schemaVersion": 1,
+	"id": "novamod",
+	"version": "${version}",
+	"name": "NovaMod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/novamod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"nova.NovaMod"
+		],
+		"fabric-datagen": [
+			"nova.NovaModDataGenerator"
+		],
+		"client": [
+			"nova.NovaModClient"
+		]
+	},
+	"mixins": [
+		"novamod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
 }
