@@ -12,6 +12,8 @@
     "requireAnnotations": true
   },
   "client": [
-    "WorldRendererMixin"
+    "WorldRendererMixin",
+    "GameRendererMixin",
+    "ParticleManagerMixin"
   ]
 }

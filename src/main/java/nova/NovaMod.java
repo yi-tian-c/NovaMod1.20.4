@@ -5,23 +5,22 @@ import net.fabricmc.api.ModInitializer;
 import nova.block.ModBlocks;
 import nova.entity.ModEntities;
 import nova.item.NovaModItemGroups;
+import nova.particle.ModParticles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/** 注册模组的方块、实体、粒子和物品分组。 */
 public class NovaMod implements ModInitializer {
+	/** 所有模组资源及注册项共用的命名空间。 */
 	public static final String MOD_ID = "novamod";
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
+	/** 输出模组初始化及运行日志。 */
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
 		ModBlocks.registerModBlocks();
+		ModParticles.initialize();
 		ModEntities.registerEntities();
 		ModEntities.registerAttributes();
 		NovaModItemGroups.initialize();
